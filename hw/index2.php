@@ -9,6 +9,17 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+        table,th,td{
+border:1px solid black;
+border-spacing: 0px;
+ }
+ th{
+   font:bold;
+ }
+        
+        
+        </style>
     </head>
     <body>
      
@@ -83,7 +94,7 @@ if(isset($_POST['user'])&&isset($_POST['name'])&&isset($_POST['phone'])&&isset($
   
   
   if(mysqli_query($conn,$sql)){
-    echo "inserted";
+    
   }
   else{
     echo "error";
@@ -97,29 +108,40 @@ if(isset($_POST['user'])&&isset($_POST['name'])&&isset($_POST['phone'])&&isset($
 $conn = new mysqli('localhost','root','','blog')
 or die("cannot connect");
 $result = mysqli_query($conn,"SELECT * FROM student  ");
-
-while ($row= mysqli_fetch_array($result)){
-    ?>
+?>
 
 <div>
+
+
+<table >
+<caption>students</caption>
+<tr>
+<th>user</th>
+<th>name</th>
+<th>phone</th>
+<th>address</th>
+<th>email</th>
+<th>qualification</th>
+<th>experience</th>
+<th>about</th>
+<th>delete</th>
+<th>edit</th>
+</tr>
 <?php
-
-echo $row['user'];
-echo $row['name'];
-echo $row['phone'];
-echo $row['address'];
-echo $row['email'];
-echo $row['qualification'];
-echo $row['experience'];
-echo $row['about'];
-
+while ($row= mysqli_fetch_array($result)){
 ?>
-<a href="delete.php?id=<?php echo $row['id'] ?>">delete</a>
-<a href="edit.php?id=<?php echo $row['id'] ?>">edit</a>
-
-
-
-</div>
+<tr>
+<td><?php echo $row['user']; ?></td>
+<td><?php echo $row['name']; ?></td>
+<td><?php echo $row['phone']; ?></td>
+<td><?php echo $row['address']; ?></td>
+<td><?php echo $row['email']; ?></td>
+<td><?php echo $row['qualification']; ?></td>
+<td><?php echo $row['experience']; ?></td>
+<td><?php echo $row['about']; ?></td>
+<td><a href="delete.php?id=<?php echo $row['id'] ?>">delete</a></td>
+<td><a href="edit.php?id=<?php echo $row['id'] ?>">edit</a></td>
+</tr>
 
 <?php
 
@@ -128,35 +150,62 @@ echo $row['about'];
 
 }
 ?>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
 </br>
 <br>
 <br>
 <br>
+
+<div>
+<table >
+<caption>teachers</caption>
+<tr>
+<th>user</th>
+<th>name</th>
+<th>phone</th>
+<th>address</th>
+<th>email</th>
+<th>qualification</th>
+<th>experience</th>
+<th>about</th>
+<th>delete</th>
+<th>edit</th>
+</tr>
+
+
 <?php
 $result = mysqli_query($conn,"SELECT * FROM teacher  ");
 while ($row= mysqli_fetch_array($result)){
   ?>
+<tr>
 
-<div>
-<?php
+<td><?php echo $row['user']; ?></td>
+<td><?php echo $row['name']; ?></td>
+<td><?php echo $row['phone']; ?></td>
+<td><?php echo $row['address']; ?></td>
+<td><?php echo $row['email']; ?></td>
+<td><?php echo $row['qualification']; ?></td>
+<td><?php echo $row['experience']; ?></td>
+<td><?php echo $row['about']; ?></td>
+<td><a href="delete2.php?id=<?php echo $row['id'] ?>">delete</a></td>
+<td><a href="edit2.php?id=<?php echo $row['id'] ?>">edit</a></td>
 
-echo $row['user'];
-echo $row['name'];
-echo $row['phone'];
-echo $row['address'];
-echo $row['email'];
-echo $row['qualification'];
-echo $row['experience'];
-echo $row['about'];
-
-?>
-<a href="delete2.php?id=<?php echo $row['id'] ?>">delete</a>
-<a href="edit2.php?id=<?php echo $row['id'] ?>">edit</a>
-
-
-
-</div>
-
+</tr>
 <?php
 
 
@@ -166,6 +215,16 @@ echo $row['about'];
 
 
 ?>
+
+
+</table>
+
+
+
+
+
+</div>
+
 
 
 
