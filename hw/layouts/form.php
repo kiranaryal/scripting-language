@@ -8,7 +8,7 @@ if($usertype ){
 else{
   
   ?>
-<input type="radio" name="usertype" value="student">student</button>
+<input type="radio" name="usertype" value="student" checked>student</button>
 <input type="radio" name="usertype" value="teacher">teacher</button>
 <?php
 }
