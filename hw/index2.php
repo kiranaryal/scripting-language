@@ -13,10 +13,25 @@
         table,th,td{
 border:1px solid black;
 border-spacing: 0px;
+
+ }
+ table{
+   width:60%;
+   margin-left:10%;
+   margin-right:10%;
  }
  th{
    font:bold;
  }
+ 
+ form{
+  margin-left:10%;
+ }
+ input{
+  
+  align:left;
+ }
+ 
         
         
         </style>
@@ -27,41 +42,78 @@ border-spacing: 0px;
         
   
 <form action="" method="POST">
+<table  style="width:20%;margin-left:0%;border:white;">
+<tr>
+
 <input type="radio" name="usertype" value="student">student</button>
 <input type="radio" name="usertype" value="teacher">teacher</button>
-<div class="Form-group">
-<label for="user">user</label>
-<input type="text" class="form-control" name="user" required></div>
+</tr>
+<tr></tr>
+  <td>
+    <label for="user">user</label>
+  </td>
+  <td>
+    <input type="text" class="form-control" name="user" required></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="name">name</label>
+  </td>
+  <td>
+    <input type="text" class="form-control" name="name" required></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="phone">phone</label>
+  </td>
+  <td>
+    <input type="number" class="form-control" name="phone" required></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="address">address</label>
+  </td>
+  <td>
+    <input type="text" class="form-control" name="address" required></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="email">email</label>
+  </td>
+  <td>
+    <input type="email" class="form-control" name="email" required></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="qualification">qualification</label>
+  </td>
+  <td>
+    <input type="text" class="form-control" name="qualification" required></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <label for="experience">experience</label>
+  </td>
+  <td>
+    <input type="text" class="form-control" name="experience" required></div>
+  </td>
+</tr>
+<tr>
 
-<div class="Form-group">
-<label for="name">name</label>
-<input type="text" class="form-control" name="name" required></div>
-
-
-<div class="Form-group">
-<label for="phone">phone</label>
-<input type="number" class="form-control" name="phone" required></div>
-
-<div class="Form-group">
-<label for="address">address</label>
-<input type="text" class="form-control" name="address" required></div>
-
-<div class="Form-group">
-<label for="email">email</label>
-<input type="email" class="form-control" name="email" required></div>
-
-<div class="Form-group">
-<label for="qualification">qualification</label>
-<input type="text" class="form-control" name="qualification" required></div>
-
-<div class="Form-group">
-<label for="experience">experience</label>
-<input type="text" class="form-control" name="experience" required></div>
-
-
-<div class="Form-group">
-<label for="about">about</label>
-<input type="text" class="form-control" name="about" required></div>
+<td>
+  <label for="about">about</label>
+</td>
+<td>
+<input type="text" class="form-control" name="about" required>
+</td>
+</tr>
+</table>
 
 <button type="submit">submit</button>
 
