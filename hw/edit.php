@@ -1,6 +1,6 @@
 
 <?php
-include 'layout/header.php';
+include 'layouts/header.php';
 include 'shortcut/conn.php';
 if(isset($_GET['usertype'])){
 
