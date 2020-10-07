@@ -2,7 +2,7 @@
 <table  style="width:20%;margin-left:0%;border:white;">
 <tr>
 <?php
-if($usertype){
+if($usertype ){
   
 }
 else{
