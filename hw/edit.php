@@ -12,68 +12,27 @@
     <body>
      
 <?php
-$conn = new mysqli('localhost','root','','blog')
-or die("cannot connect");
+include 'shortcut/conn.php';
+if(isset($_GET['usertype'])){
 
+	$usertype = $_GET['usertype'];
 if (isset($_GET['id'])) 
 {
 $id = $_GET['id'];
 
-$result= mysqli_query($conn,"SELECT * FROM student where id=$id ");
-$data= mysqli_fetch_array($result)
-
-?>
-<?php $data['user']; ?>
-
-<form action="" method="POST">
-<div class="Form-group">
-<label for="user">user</label>
-<input type="text" class="form-control" name="user"  value="<?php echo $data['user']; ?>"></div>
-
-<div class="Form-group">
-<label for="name">name</label>
-<input type="text" class="form-control" name="name" value="<?php echo $data['name']; ?>"></div>
-
-
-<div class="Form-group">
-<label for="phone">phone</label>
-<input type="number" class="form-control" name="phone" value="<?php echo $data['phone']; ?>"></div>
-
-<div class="Form-group">
-<label for="address">address</label>
-<input type="text" class="form-control" name="address" value="<?php echo $data['address']; ?>"></div>
-
-<div class="Form-group">
-<label for="email">email</label>
-<input type="email" class="form-control" name="email" value="<?php echo $data['email']; ?>"></div>
-
-<div class="Form-group">
-<label for="qualification">qualification</label>
-<input type="text" class="form-control" name="qualification" value="<?php echo $data['qualification']; ?>"></div>
-
-<div class="Form-group">
-<label for="experience">experience</label>
-<input type="text" class="form-control" name="experience" value="<?php echo $data['experience']; ?>"></div>
-
-
-<div class="Form-group">
-<label for="about">about</label>
-<input type="text" class="form-control" name="about" value="<?php echo $data['about']; ?>" required></div>
+$result= mysqli_query($conn,"SELECT * FROM $usertype where id=$id ");
+$data= mysqli_fetch_array($result);
 
 
 
-<button class="btn" type="submit" name="update">update</button>
 
-</form>
+include 'layouts/form.php';
 
 
 
 
 
-<?php
-
-
-if(isset($_POST['user'])&&isset($_POST['name'])&&isset($_POST['phone'])&&isset($_POST['address'])&&isset($_POST['email'])&&isset($_POST['qualification'])&&isset($_POST['experience'])&&isset($_POST['about']))
+if(isset($_POST['user'])&&isset($_POST['name'])&&isset($_POST['phone'])&&isset($_POST['address'])&&isset($_POST['email'])&&isset($_POST['qualification'])&&isset($_POST['experience'])&&isset($_POST['about'])&&isset($_POST['usertype']))
 {
   $user =$_POST['user'];
   $name =$_POST['name'];
@@ -83,8 +42,10 @@ if(isset($_POST['user'])&&isset($_POST['name'])&&isset($_POST['phone'])&&isset($
   $qualification =$_POST['qualification'];
   $experience =$_POST['experience'];
   $about =$_POST['about'];
+  $usertype=$_POST['usertype'];
   
-  $sql = "UPDATE  `student` SET  user ='$user', name ='$name', phone ='$phone', address ='$address', email ='$email', qualification ='$qualification', experience = '$experience', about= '$about' WHERE id=$id " ;
+  
+  $sql = "UPDATE  `$usertype` SET  user ='$user', name ='$name', phone ='$phone', address ='$address', email ='$email', qualification ='$qualification', experience = '$experience', about= '$about' WHERE id=$id " ;
   if(mysqli_query($conn,$sql)){
     echo "updated";
     header ('location:index2.php');
@@ -94,7 +55,7 @@ if(isset($_POST['user'])&&isset($_POST['name'])&&isset($_POST['phone'])&&isset($
     
   }
 }
-
+}
 }
 
 ?>
