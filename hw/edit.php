@@ -48,7 +48,7 @@ if(isset($_POST['user'])&&isset($_POST['name'])&&isset($_POST['phone'])&&isset($
   $sql = "UPDATE  `$usertype` SET  user ='$user', name ='$name', phone ='$phone', address ='$address', email ='$email', qualification ='$qualification', experience = '$experience', about= '$about' WHERE id=$id " ;
   if(mysqli_query($conn,$sql)){
     echo "updated";
-    header ('location:index2.php');
+    header ('location:index.php');
   }
   else{
     echo "error".$id;

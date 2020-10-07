@@ -1,7 +1,6 @@
 <?php
+include 'shortcut/conn.php';
 
-$conn = new mysqli('localhost','root','','blog')
-or die("cannot connect");
 if(isset($_GET['usertype'])){
 
 	$usertype = $_GET['usertype'];
@@ -11,7 +10,7 @@ if(isset($_GET['usertype'])){
 		$id = $_GET['id'];
 		mysqli_query($conn, "DELETE FROM `$usertype` WHERE id=$id");
 		
-		header('location: index2.php');
+		header('location: index.php');
 	}else
 	echo $usertype;
 	
