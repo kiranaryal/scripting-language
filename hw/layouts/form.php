@@ -1,5 +1,5 @@
 <form action="" method="POST">
-<table  style="width:20%;margin-left:0%;border:white;">
+<table  class="form" style="width:22%;margin-left:0%;border:white;">
 <tr>
 <?php
 if($usertype ){

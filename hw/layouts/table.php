@@ -1,7 +1,7 @@
 
 
 
-<table >
+<table class="table1" >
 <caption><?php echo $usertype."s"; ?></caption>
 <tr>
 <th>user</th>

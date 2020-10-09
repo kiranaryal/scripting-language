@@ -10,20 +10,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <style>
-        table,th,td{
+.table1{
+  border-collapse:collapse;
+}
+ .table1 td,th {
 border:1px solid black;
+
+font:bold;
+
+ }
+ table.form {
+
 border-spacing: 0px;
 
  }
+
  table{
    width:60%;
    margin-left:10%;
    margin-right:10%;
  }
- th{
-   font:bold;
- }
- 
+
  form{
   margin-left:10%;
  }
